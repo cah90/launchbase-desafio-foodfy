@@ -45,18 +45,17 @@ function addCloseModalHandler() {
 
 /* ==== Links ==== */
 
-const aboutLink = document.querySelector('#about')
-const recipesLink = document.querySelector('#recipes')
+function linkActive(id, pathname) {
+  //console.log(`linkActive(id=${id}, pathname=${pathname}) was called`)
+  
+  const link = document.querySelector(id)
 
-console.log(document.URL)
-
-if (document.location.pathname.includes("about.html")) {
-  aboutLink.classList.add("active")
-} 
-
-if (document.location.pathname.includes("recipes.html")) {
-    recipesLink.classList.add("active")
+  if (document.location.pathname.includes(pathname)) {
+    //console.log(`if was executed for id ${id} and pathname ${pathname}`)
+    link.classList.add("active")
+    
+  }
 }
 
-
-
+linkActive('#about', "about.html")
+linkActive('#recipes', "recipes.html")
